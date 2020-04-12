@@ -19,6 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\libraries\imgui-master\imgui.cpp" />
+    <ClCompile Include="..\libraries\imgui-master\imgui_demo.cpp" />
+    <ClCompile Include="..\libraries\imgui-master\imgui_draw.cpp" />
+    <ClCompile Include="..\libraries\imgui-master\imgui_widgets.cpp" />
+    <ClCompile Include="..\libraries\imgui-sfml-master\imgui-SFML.cpp" />
+    <ClCompile Include="src\imgui_superengine.cpp" />
     <ClCompile Include="src\inputmanager.cpp" />
     <ClCompile Include="src\grid.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -26,6 +32,8 @@
     <ClCompile Include="src\system.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\libraries\imgui-master\imconfig.h" />
+    <ClInclude Include="src\imgui_superengine.h" />
     <ClInclude Include="src\inputmanager.h" />
     <ClInclude Include="src\grid.h" />
     <ClInclude Include="src\tilemanager.h" />
@@ -83,14 +91,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\libraries\SFML-2.5.1\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\libraries\SFML-2.5.1\include;..\libraries\imgui-master;..\libraries\imgui-sfml-master;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\libraries\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\libraries\SFML-2.5.1\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\libraries\SFML-2.5.1\include;..\libraries\imgui-master;..\libraries\imgui-sfml-master;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\libraries\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
@@ -119,7 +127,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,7 +155,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-system.lib;sfml-window.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

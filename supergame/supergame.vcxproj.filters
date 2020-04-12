@@ -5,6 +5,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\libraries">
+      <UniqueIdentifier>{eab975a3-fb9a-4209-96b2-ac1070f05666}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -22,11 +25,31 @@
     <ClCompile Include="src\system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\libraries\imgui-master\imgui.cpp">
+      <Filter>Source Files\libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\imgui-master\imgui_demo.cpp">
+      <Filter>Source Files\libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\imgui-master\imgui_draw.cpp">
+      <Filter>Source Files\libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\imgui-master\imgui_widgets.cpp">
+      <Filter>Source Files\libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\imgui-sfml-master\imgui-SFML.cpp">
+      <Filter>Source Files\libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui_superengine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\grid.h" />
     <ClInclude Include="src\inputmanager.h" />
     <ClInclude Include="src\tilemanager.h" />
     <ClInclude Include="src\system.h" />
+    <ClInclude Include="..\libraries\imgui-master\imconfig.h" />
+    <ClInclude Include="src\imgui_superengine.h" />
   </ItemGroup>
 </Project>

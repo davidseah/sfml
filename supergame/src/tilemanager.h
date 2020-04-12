@@ -91,9 +91,9 @@ class tile
 	tile();
 	void Load(const std::string& filename);
 	sf::Sprite tileSprite;
-
-	private:
 	sf::Texture tileTexture;
+	private:
+	
 	
 };
 
@@ -104,9 +104,9 @@ class tilemanager
 	void draw(sf::RenderWindow* win);
 	void tilesExport();
 	void tilesImport();
-
-	private:
 	tile tileContainer[LASTCOUNT];
 	TILEENUM tileChoice[30][40];
+	private:
+	
 };
 

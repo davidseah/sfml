@@ -2,6 +2,7 @@
 #include "inputmanager.h"
 #include "tilemanager.h"
 #include "grid.h"
+#include "imgui_superengine.h"
 
 #include <iostream>
 
@@ -37,15 +38,18 @@ namespace superengine
 		
 	}
 
-
-
 	bool system::Initialize()
 	{
-		window = new sf::RenderWindow(sf::VideoMode(640, 480), "SuperGame");
+		window = new sf::RenderWindow(sf::VideoMode(900, 480), "SuperGame");
+		window->setVerticalSyncEnabled(true);
+		
 		myinputmanager = new inputmanager(window);
 		mytilemanager = new tilemanager();
 		mygrid = new grid();
-		std::cout << "System Initialized/n";
+		myimgui = new imgui_superengine(window, &deltaClock, mytilemanager);
+
+		myimgui->initialization();
+		std::cout << "System Initialized\n";
 		return true;
 	}
 
@@ -54,24 +58,29 @@ namespace superengine
 		sf::Event event;
 		while(window->pollEvent(event))
 		{
+			ImGui::SFML::ProcessEvent(event);
 			if(event.type == sf::Event::Closed)
 			{
 				window->close();
 			}
 		}
+		myimgui->update();
 
 		myinputmanager->updateKey();
 
 		window->clear();
+	
 
 		if(myinputmanager->isKeyTriggered(sf::Keyboard::A))
 		{
 			mygrid->Switch();
 		}
+
 	
 		mytilemanager->draw(window);
 		mygrid->draw(window,myinputmanager);
-
+	
+		myimgui->draw();
 		window->display();
 
 	}
@@ -83,6 +92,9 @@ namespace superengine
 			delete window;
 			window = nullptr;
 		}
+
+
+		myimgui->shutdown();
 	}
 
 

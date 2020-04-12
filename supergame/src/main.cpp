@@ -1,8 +1,9 @@
-#include <iostream>
+#include "imgui.h"
+#include "imgui-SFML.h"
 #include <SFML/Graphics.hpp>
-
 #include "grid.h"
 #include "system.h"
+#include <iostream>
 
 int main()
 {
@@ -10,8 +11,6 @@ int main()
 	SYSTEM->Initialize();
 
 
-
-	
 	//load texture
 	sf::Texture texture;
 	if(!texture.loadFromFile("d:\\dev\\supergame\\rpg-pack\\chars\\gabe\\gabe-idle-run.png"))

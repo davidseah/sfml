@@ -58,7 +58,7 @@ TILEENUM fillup[][40]
 tilemanager::tilemanager()
 {
 	memset(tileChoice, 0, sizeof(tileChoice));
-	memcpy(tileChoice, fillup, sizeof(tileChoice));
+	//memcpy(tileChoice, fillup, sizeof(tileChoice));
 
 	tileContainer[SLICE].Load("d:\\dev\\supergame\\rpg-pack\\tiles\\generic-rpg-Slice.png");
 	tileContainer[TILE01].Load("d:\\dev\\supergame\\rpg-pack\\tiles\\generic-rpg-tile01.png");

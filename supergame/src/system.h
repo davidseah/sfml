@@ -1,16 +1,15 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Clock.hpp>
 
 class sf::RenderWindow;
 class inputmanager;
 class tilemanager;
 class grid;
-
+class imgui_superengine;
 
 namespace superengine
 {
-	
-
 	class system
 	{
 		public:
@@ -23,6 +22,15 @@ namespace superengine
 		void Shutdown();
 		bool isActive();
 
+		tilemanager* GetTileManager()
+		{
+			return mytilemanager;
+		}
+
+		inputmanager* GetInputManager()
+		{
+			return myinputmanager;
+		}
 	
 		private:
 		system();
@@ -32,6 +40,9 @@ namespace superengine
 		inputmanager* myinputmanager;
 		grid* mygrid;
 		sf::RenderWindow* window;
+		imgui_superengine* myimgui;
+
+		sf::Clock deltaClock;
 
 		static system* m_singleton;
 	};
