@@ -19,27 +19,12 @@ int main()
 		std::cout << "Error loading file.";
 	}
 
-
-	sf::Texture tilestexture;
-	if(!tilestexture.loadFromFile("d:\\dev\\supergame\\rpg-pack\\tiles\\generic-rpg-tile01.png"))
-	{
-		//error
-		std::cout << "Error loading file.";
-	}
-
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
 	sprite.setTextureRect(sf::IntRect(0, 0, 24, 24));
 	sprite.setScale(sf::Vector2f(1.5f, 1.5f));
 	/*sprite.setPosition(sf::Vector2f(0.f, 0.f));
 	sprite.setColor(sf::Color(0, 255, 0));*/
-
-	sf::Sprite tiles;
-	tiles.setTexture(tilestexture);
-
-
-	grid mygrid;
-	//inputmanager myinputmanager(window);
 	
 	while(SYSTEM->isActive())
 	{

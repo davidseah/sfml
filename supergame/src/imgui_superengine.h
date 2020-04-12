@@ -10,8 +10,7 @@
 class imgui_superengine
 {
 	public:
-	imgui_superengine(sf::RenderWindow* const, sf::Clock * const,
-					  tilemanager* const);
+	imgui_superengine();
 	bool initialization();
 	void update();
 	void draw();
@@ -19,10 +18,5 @@ class imgui_superengine
 
 
 	private:
-	sf::RenderWindow* const window;
-
-	tilemanager* const mytilemanager;
-
-	sf::Clock* const dt;
 };
 

@@ -31,18 +31,24 @@ namespace superengine
 		{
 			return myinputmanager;
 		}
-	
+
+		sf::RenderWindow* GetWindow()
+		{
+			return window;
+		}
+
+
+		sf::Clock deltaClock;
+
 		private:
 		system();
 		~system();
 
+		sf::RenderWindow* window;
 		tilemanager* mytilemanager;
 		inputmanager* myinputmanager;
-		grid* mygrid;
-		sf::RenderWindow* window;
 		imgui_superengine* myimgui;
-
-		sf::Clock deltaClock;
+		grid* mygrid;
 
 		static system* m_singleton;
 	};

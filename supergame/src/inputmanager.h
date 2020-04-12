@@ -7,7 +7,7 @@ class inputmanager
 	public:
 
 
-	inputmanager(sf::RenderWindow* const);
+	inputmanager();
 	void updateKey();
 	bool isKeyPressed(sf::Keyboard::Key);
 	bool isKeyReleased(sf::Keyboard::Key);

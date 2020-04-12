@@ -1,6 +1,7 @@
 #include "inputmanager.h"
+#include "system.h"
 
-inputmanager::inputmanager(sf::RenderWindow* oWindow) : window(oWindow)
+inputmanager::inputmanager()
 {
 	memset(m_wasPressed, false, sf::Keyboard::KeyCount);
 	memset(m_isPressed, false, sf::Keyboard::KeyCount);
@@ -79,5 +80,5 @@ bool inputmanager::isRightMouseReleased()
 
 sf::Vector2i inputmanager::getMousePosition()
 {
-	return sf::Mouse::getPosition(*window);
+	return sf::Mouse::getPosition(*SYSTEM->GetWindow());
 }

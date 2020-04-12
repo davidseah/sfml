@@ -8,7 +8,7 @@
 
 namespace superengine
 {
-	system * system::m_singleton = nullptr;
+	system* system::m_singleton = nullptr;
 
 	system* system::GetSingleton()
 	{
@@ -43,12 +43,15 @@ namespace superengine
 		window = new sf::RenderWindow(sf::VideoMode(900, 480), "SuperGame");
 		window->setVerticalSyncEnabled(true);
 		
-		myinputmanager = new inputmanager(window);
+		myinputmanager = new inputmanager();
+		
 		mytilemanager = new tilemanager();
+		
 		mygrid = new grid();
-		myimgui = new imgui_superengine(window, &deltaClock, mytilemanager);
 
+		myimgui = new imgui_superengine();
 		myimgui->initialization();
+
 		std::cout << "System Initialized\n";
 		return true;
 	}
@@ -93,8 +96,28 @@ namespace superengine
 			window = nullptr;
 		}
 
+		if(myinputmanager)
+		{
+			delete myinputmanager;
+			myinputmanager = nullptr;
+		}
+	
+		if(mytilemanager)
+		{
+			delete mytilemanager;
+			mytilemanager = nullptr;
+		}
 
-		myimgui->shutdown();
+		if(mygrid)
+		{
+			delete mygrid;
+			mygrid = nullptr;
+		}
+		
+		if(myimgui)
+		{
+			delete myimgui;
+		}
 	}
 
 
