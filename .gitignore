@@ -23,3 +23,17 @@
 /bin/Win32/Debug/supergame.exe
 /bin/Win32/Debug/supergame.ilk
 /bin/Win32/Debug/supergame.pdb
+/bin/intermediates/x64/Debug/main.obj
+/bin/intermediates/x64/Debug/supergame.log
+/bin/intermediates/x64/Debug/supergame.tlog/CL.command.1.tlog
+/bin/intermediates/x64/Debug/supergame.tlog/CL.read.1.tlog
+/bin/intermediates/x64/Debug/supergame.tlog/CL.write.1.tlog
+/bin/intermediates/x64/Debug/supergame.tlog/link.command.1.tlog
+/bin/intermediates/x64/Debug/supergame.tlog/link.read.1.tlog
+/bin/intermediates/x64/Debug/supergame.tlog/link.write.1.tlog
+/bin/intermediates/x64/Debug/supergame.tlog/supergame.lastbuildstate
+/bin/intermediates/x64/Debug/vc142.idb
+/bin/intermediates/x64/Debug/vc142.pdb
+/bin/x64/Debug/supergame.exe
+/bin/x64/Debug/supergame.ilk
+/bin/x64/Debug/supergame.pdb
